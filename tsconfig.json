@@ -1,3 +1,25 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Completeness */
+    "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
+    "paths": {
+      "*": ["src/*"],
+      "api/*": ["src/api/*"],
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "config/*": ["src/config/*"],
+      "context/*": ["src/context/*"],
+      "hooks/*": ["src/hooks/*"],
+      "i18n/*": ["src/i18n/*"],
+      "reactRedux/*": ["src/reactRedux/*"],
+      "routes/*": ["src/routes/*"],
+      "screens/*": ["src/screens/*"],
+      "services/*": ["src/services/*"],
+      "theme/*": ["src/theme/*"],
+      "utils/*": ["src/utils/*"]
+    },
+  }
 }
