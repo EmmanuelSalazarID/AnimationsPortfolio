@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, useWindowDimensions } from 'react-native';
+import { Platform, StyleSheet, useWindowDimensions } from 'react-native';
 import Video, { ResizeMode } from 'react-native-video';
 import { GestureDetector, Gesture, State } from 'react-native-gesture-handler';
 import Animated, {
@@ -21,9 +21,11 @@ const VideoModal: React.FC<Props> = ({ video }) => {
   const gestureState = useSharedValue<State>(State.UNDETERMINED);
   const offsetY = useSharedValue(0);
 
+  const marginBottom = Platform.OS === 'ios' ? 54 : 29;
+
   const minHeight = 64;
-  const midBound = height - 3 * 54;
-  const upperBound = midBound + 54;
+  const midBound = height - 3 * marginBottom;
+  const upperBound = midBound + marginBottom;
 
   const tap = Gesture.Tap().onEnd(() => {
     if (translationY.value > 0) {
@@ -130,6 +132,7 @@ const VideoModal: React.FC<Props> = ({ video }) => {
               style={{ width: '100%', height: '100%' }}
               resizeMode={ResizeMode.COVER}
               paused={false}
+              ignoreSilentSwitch="ignore"
             />
           </Animated.View>
         </Animated.View>
