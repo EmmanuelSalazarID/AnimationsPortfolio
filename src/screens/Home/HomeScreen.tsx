@@ -10,6 +10,7 @@ const HomeScreen: React.FC = () => {
   return (
     <Container flex>
       <ButtonField label="Youtube Transition" onPress={() => navigate('YoutubeTransition')} />
+      <ButtonField label="Flutter Animations" onPress={() => navigate('FlutterAnimations')} />
     </Container>
   );
 };
